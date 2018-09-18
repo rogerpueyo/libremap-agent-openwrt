@@ -42,7 +42,10 @@ config plugin 'babel'
 
 config plugin 'bmx6'
 	option enabled '0'
-	
+
+config plugin 'bmx7'
+	option enabled '0'
+
 config plugin 'qmp'
 	option enabled '0'
 EOF
@@ -61,12 +64,11 @@ if [ ! -f /etc/config/libremap ]; then
 fi
 
 # enable plugins if available
-PLUGINS="wireless system freifunk olsr location altermap babel bmx6"
-for p in $PLUGINS; do 
+PLUGINS="wireless system freifunk olsr location altermap babel bmx6 bmx7"
+for p in $PLUGINS; do
 	if opkg list-installed | grep luci-lib-libremap-$p; then
 		uci set libremap.$p=plugin
 		uci set libremap.$p.enabled=1
 	fi
 done
 uci commit libremap
-

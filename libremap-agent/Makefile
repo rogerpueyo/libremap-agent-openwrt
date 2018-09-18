@@ -76,6 +76,7 @@ $(eval $(call BuildPlugin,system,system,))
 $(eval $(call BuildPlugin,wireless,wireless,))
 $(eval $(call BuildPlugin,babel,babel,))
 $(eval $(call BuildPlugin,bmx6,bmx6,))
+$(eval $(call BuildPlugin,bmx7,bmx7,))
 $(eval $(call BuildPlugin,qmp,qmp,))
 
 define Package/libremap-agent
